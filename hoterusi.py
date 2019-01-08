@@ -3,7 +3,7 @@ from logic import searchtop
 
 app = Flask(__name__)
 
-app.register_blueprint(searchtop.searchtop)
+app.register_blueprint(searchtop.search)
 
 if __name__ == '__main__':
     app.run()
