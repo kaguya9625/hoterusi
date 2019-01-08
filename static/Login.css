@@ -1,0 +1,58 @@
+header{
+  background-color: red;
+  font-size: 60px;
+  color: #fff;
+  font-family: 'arial black';
+  text-align: left;
+  padding-left:50px;
+}
+
+body {
+  background-color: white;
+  color: #000;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+h1{font-size: 50px}
+
+div { text-align : center ;
+      font-size: 22px}
+
+.square_btn{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+.square_btn:active {/*ボタンを押したとき*/
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+}
+
+.demo1{
+  text-align: right;
+}
+
+
+.box{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+.box p {
+    margin: 0;
+    padding: 0;
+}

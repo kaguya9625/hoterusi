@@ -1,0 +1,77 @@
+@charset "UTF-8";
+* {
+margin: 0;
+padding: 0;
+}
+
+header{
+background-color: red;
+font-size: 60px;
+color: #fff;
+font-family: 'arial black';
+text-align: left;
+padding-left:50px;
+}
+
+.date{
+  display:inline-flex;
+}
+
+.SearchBox {
+  margin:10px; padding:10px; border:3px solid gray;
+  margin-top: 30px;
+  text-align:center;
+  height: 300px;
+  width: 600px;
+  margin-right: auto;
+  margin-left : auto;
+}
+
+#locate{
+  margin-top: 25px;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 10;
+}
+
+input:focus {
+    border:solid 1px#0192412;
+}
+
+.date{
+  height: 25;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#CheckIn,#CheckOut{
+border-radius:5px;
+margin-left: 5px;
+margin-right: 5px;
+width:135;
+}
+
+.member{
+  display:inline-flex;
+  font-size: 15px;
+}
+
+#roomnumber,#adult,#child{
+width:30px;
+text-align:right;
+}
+#room,#adult1,#child1{
+  margin-right: 0;
+}
+
+#button1{
+width:100px;
+height: 50px;
+margin: 25px;
+border-radius: 10px;
+color: red;
+margin-top: -10px;
+}
+.money{
+  margin-top: 10px;
+}

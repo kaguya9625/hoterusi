@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet"  href="SearchTop.css">
+</head>
+   <header>Hoterusi.com</header>
+<hr>
+<body>
+
+<div class="SearchBox">
+    <input type="search" id="locate" name="locate" placeholder="地名を入力"/>
+    <div class="date" >
+      <p>チェックイン日</P>
+    <input type ="date" id="CheckIn" name ="CheckIn"  min="">
+    <p>チェックアウト日</P>
+    <input type ="date" id="CheckOut" name ="CheckOut" >
+    </div>
+    <div class="member" >
+    <p id="room">客室数</p>
+    <input type="number" id="roomnumber" name="roomnumber" min="0"/>
+    <p id="adult1">大人</p>
+      <input type="number" id="adult" name=adult min="0"/>
+      <p id="child1">子供</p>
+        <input type="number" id="child" name=child min="0"/>
+      </div>
+      <div class="money">
+        <p>予算</p>
+        <input id="range" type="range" min="0" max="100" step="0.5"/>
+        <span id="value">5</span>万
+        <script>
+          var elem = document.getElementById('range');
+          var target = document.getElementById('value');
+          var rangeValue = function (elem, target) {
+            return function(evt){
+              target.innerHTML = elem.value;
+            }
+          }
+          elem.addEventListener('input', rangeValue(elem, target));
+        </script>
+      </div>
+
+<br>
+        <button id="button1"  onclick="location.href='SearchResult.html'"> 検索</butoon>
+</div>
+</body>
+</html>

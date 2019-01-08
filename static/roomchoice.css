@@ -1,0 +1,60 @@
+header{
+background-color: red;
+font-size: 60px;
+color: #fff;
+font-family: 'arial black';
+text-align: left;
+padding-left:50px;
+}
+
+h1{
+  font-family: kozuka-mincho-pr6n, serif;
+  font-style: normal;
+  font-weight: 200;
+  text-align: center;
+  font-size: 50px;
+}
+
+
+table{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 40px;
+}
+th{
+  padding:20px;
+  }
+  td{
+padding-left:40px;
+padding-right: 40px;
+  }
+
+button{
+  height: 100px;
+  width: 100px;
+  color: #10FACF;
+  font-size: 15px;
+  border-bottom: solid 4px #627295;
+  border-radius: 20px;
+  color: #A90002;
+  font-family: vdl-logojrblack, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  margin-top: 30px;
+}
+.font{
+  font-size: 30px;
+}
+.room{
+text-align: center;
+}
+#koumoku{
+  background: blue;
+}
+#footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    height: 100px;
+}
