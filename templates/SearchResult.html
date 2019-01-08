@@ -8,24 +8,24 @@
 <hr>
 <body>
 <div class="SearchBox">
-    <input type="search" id="locate" name="locate" value="東京"placeholder="地名を入力"/>
+    <input type="search" id="locate" name="locate" value={{locate}}/>
     <div class="date" >
       <p>チェックイン日</P>
-    <input type ="date" id="CheckIn" name ="CheckIn"  min="" value="2018-07-01">
+    <input type ="date" id="CheckIn" name ="CheckIn"  min="" value={{checkIn}}>
     <p>チェックアウト日</P>
-    <input type ="date" id="CheckOut" name ="CheckOut" value="2018-07-02" >
+    <input type ="date" id="CheckOut" name ="CheckOut" value={{checkOut}} >
     </div>
     <div class="member" >
     <p id="room">客室数</p>
-    <input type="number" id="roomnumber" name="roomnumber" min="0" value="1"/>
+    <input type="number" id="roomnumber" name="roomnumber" min="0" value={{roomnumber}}/>
     <p id="adult1">大人</p>
-      <input type="number" id="adult" name=adult min="0" value="2"/>
+      <input type="number" id="adult" name=adult min="0" value={{adult}}/>
       <p id="child1">子供</p>
-        <input type="number" id="child" name=child min="0" value="0"/>
+        <input type="number" id="child" name=child min="0" value={{child}}/>
       </div>
       <div class="money">
         <p>予算</p>
-        <input id="range" type="range" min="0" max="100" step="0.5" value="5"/>
+        <input id="range" name="range"type="range" min="0" max="100" step="0.1" value={{range}}/>
         <span id="value">5</span>万
         <script>
           var elem = document.getElementById('range');
