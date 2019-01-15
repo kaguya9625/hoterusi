@@ -26,7 +26,7 @@
       <div class="money">
         <p>予算</p>
         <input id="range" name="range"type="range" min="0" max="100" step="0.1" value={{ range }}>
-        <span id="value">5</span>万
+        <span id="value">{{ range }}</span>万
         <script>
           var elem = document.getElementById('range');
           var target = document.getElementById('value');
