@@ -2,30 +2,30 @@
 <html lang='ja'>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet"  href="/static/Searchresult.css">
+  <link rel="stylesheet" href="/static/SearchResult.css">
 </head>
    <header>Hoterusi.com</header>
 <hr>
 <body>
 <div class="SearchBox">
-    <input type="search" id="locate" name="locate" value={{locate}}/>
+    <input type="search" id="locate" name="locate" value={{ locate }}>
     <div class="date" >
       <p>チェックイン日</P>
-    <input type ="date" id="CheckIn" name ="CheckIn"  min="" value={{checkIn}}>
+    <input type ="date" id="CheckIn" name ="CheckIn"  min="" value={{ CheckIn }}>
     <p>チェックアウト日</P>
-    <input type ="date" id="CheckOut" name ="CheckOut" value={{checkOut}} >
+    <input type ="date" id="CheckOut" name ="CheckOut" value={{ CheckOut }}>
     </div>
     <div class="member" >
     <p id="room">客室数</p>
-    <input type="number" id="roomnumber" name="roomnumber" min="0" value={{roomnumber}}/>
+    <input type="number" id="roomnumber" name="roomnumber" min="0" value={{ roomnumber }}>
     <p id="adult1">大人</p>
-      <input type="number" id="adult" name=adult min="0" value={{adult}}/>
+      <input type="number" id="adult" name=adult min="0" value={{ adult }}>
       <p id="child1">子供</p>
-        <input type="number" id="child" name=child min="0" value={{child}}/>
+        <input type="number" id="child" name=child min="0" value={{ child }}>
       </div>
       <div class="money">
         <p>予算</p>
-        <input id="range" name="range"type="range" min="0" max="100" step="0.1" value={{range}}/>
+        <input id="range" name="range"type="range" min="0" max="100" step="0.1" value={{ range }}>
         <span id="value">5</span>万
         <script>
           var elem = document.getElementById('range');
@@ -42,7 +42,7 @@
         <button id="button1">検索</butoon>
 </div>
 <hr>
-<h1>検索条件:東京都,2018/7/1~2018/7/2 客室数1　大人二名　予算5万</h1>
+<h1>{{ searchconditions }}</h1>
 <p2>２件HITしました</p2><br>
 <div class="hotel">
 <span><img src="hotel1.png"></span>
