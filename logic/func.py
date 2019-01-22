@@ -8,8 +8,8 @@ def searchhotel(locate):
     msg = 'ホテルがありません'
     conn = sqlite3.connect('hoterusi.db')
     c = conn.cursor()
-    sql = 'select * from hotel where hotel_addres like ?;'
-    c.execute(sql,('%'+ locate,+'%'))
+    sql = "select * from hotel where hotel_address like '%?%',(word,)"
+    c.execute("select * from hotel where hotel_address like ?;",(locate+'%',))
     result = c.fetchall()
     if result == '':
         return msg
