@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template,request, redirect, url_for
 
-log = Blueprint('log', __name__,template_folder='templates',static_folder='./static')
+re_ch = Blueprint('re_ch', __name__,template_folder='templates',static_folder='./static')
 
-@log.route('/login')
-def login():
-    return render_template('Login.html')
+@re_ch.route('/reservation_check')
+def reservation_check():
+    return render_template('reservation_check.html')

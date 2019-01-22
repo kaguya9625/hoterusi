@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template,request, redirect, url_for
 
-log = Blueprint('log', __name__,template_folder='templates',static_folder='./static')
+mem_con = Blueprint('mem_con', __name__,template_folder='templates',static_folder='./static')
 
-@log.route('/login')
-def login():
-    return render_template('Login.html')
+@mem_con.route('/member_confirm')
+def member_confirm():
+    return render_template('member_confirm.html')
