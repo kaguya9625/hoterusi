@@ -1,0 +1,13 @@
+header{
+    background-color: red;
+    font-size: 60px;
+    color: #fff;
+    font-family: 'arial black';
+    text-align: left;
+    padding-left:50px;
+  }
+
+  h1{
+    color: red;
+    font-size:30px;
+  }
