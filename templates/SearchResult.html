@@ -8,6 +8,7 @@
 <hr>
 <body>
 <div class="SearchBox">
+  <form method="POST" action="/searchresult">
     <input type="search" id="locate" name="locate" value={{ locate }}>
     <div class="date" >
       <p>チェックイン日</P>
@@ -40,21 +41,24 @@
       </div>
 <br>
         <button id="button1">検索</butoon>
+        </form>
 </div>
 <hr>
 <h1>{{ searchconditions }}</h1>
 <p2>{{hit}}件HITしました</p2><br>
 {% for item in hotellist %}
+<form method="POST" action="/Roomchoice">
 <div class="hotel">
-<span><img src="hotel1.png"></span>
+<span><img src="../static/{{item[3]}}"></span>
 <span class="hotelname">{{item[1]}}<br>
-<span class="locate">住所:{{item[2]}}}</span>
+<span class="locate">住所:{{item[2]}}</span>
 </span>
-{% endfor %}
-<span class="hotelprice">一泊5万円~</span>
-<button class="button2" onclick="location.href='roomchoice.html'">客室を選択</button>
+<span class="hotelprice">一泊{{range}}万円~</span>
+<button class="button2" name = "hotel" type="submit" value="{{item[0]}}">客室を選択</button>
 </div>
 <hr>
+</form>
+{% endfor %}
 </body>
 <footer>
 
