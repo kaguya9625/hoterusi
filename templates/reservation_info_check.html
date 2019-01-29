@@ -10,19 +10,12 @@
   <body>
     <br>
     <h2>予約済みホテル一覧444</h2>
-    {% for reserv in reservations %}
-      <h1 style="color:orange">{{ reserv['member_id'] }}</h1>
-    {% endfor %}
-    <p class="space">　</p>
-    <h2 style="color:blue">{{ reservations }}</h2>
 
-    <h1 style="color:red">{{ reservations[0] }}</h1>
-
-    <h1 style="color:green">{{ reservations[0]['member_id'] }}</h1>
+    {% for key, val in reservations.items() %}
     <table>
       <tr>
         <th>ホテル名</th>
-        <td>鎌倉帝国ホテル</td>
+        <td>{{ val['hotel_name'] }}</td>
       </tr>
       <tr>
         <th>ルームタイプ</th>
@@ -30,21 +23,22 @@
       </tr>
       <tr>
         <th>チェックイン日時</th>
-        <td>1192年 1月 1日</td>
+        <td>{{ val['check_in_date'] }}</td>
       </tr>
       <tr>
         <th>チェックアウト日時</th>
-        <td>1192年 1月 3日</td>
+        <td>{{ val['check_out_date'] }}</td>
       </tr>
         <th>人数</th>
-        <td>大人300人 子供25人</td>
+        <td>大人{{ val['count_adalt'] }}人 子供{{ val['count_child'] }}人</td>
       </tr>
       <tr>
         <th>料金</th>
-        <td>56,000,000銭</td>
+        <td>{{ val['price'] }}</td>
       </tr>
   </table>
-  <input type="button"  value="この予約をキャンセルする"  class="square_btn" onclick="location.href='予約キャンセル.html'">
-  <hr width="500px">
+  <input type="button"  value="この予約をキャンセルする"  class="square_btn" onclick="location.href='reservation_cancel'">
+  <hr width="500px"><br><br><br>
+  {% endfor %}
   </body>
 </html>

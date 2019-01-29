@@ -26,11 +26,14 @@ def reservation_info_check():
 
     for record in reservation:
         record_dict = dict(record)
-        # cur.execute("SELECT hotel_name FROM hotel WHERE hotel_id=?", (record["hotel_id"],)) #hotel_idを基に検索をかける
-        reservation = []
-        reservation_info[i] = record_dict
+        cur.execute("SELECT hotel_name FROM hotel WHERE hotel_id=?", (record["hotel_id"],)) #hotel_idを基に検索をかけるselect文実行
+        hotels = cur.fetchone() #select文で取得したレコｰﾄﾞを格納
+        hotel_name = hotels['hotel_name'] #ホテル名を変数に格納
+        reservation_info[i] = record_dict #予約テーブルのレコードをそのまま入れる
+        reservation_info[i]['hotel_name'] = hotel_name #ホテル名をキーと共に新規追加
         i += 1
 
-    test = reservation_info
+
+    test = type(reservation_info)
     return render_template('reservation_info_check.html', reservations=reservation_info, test=test)
     # return render_template('reservation_info_check.html', test=test)
