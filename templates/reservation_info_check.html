@@ -9,8 +9,16 @@
     <header>Hoterusi.com</header>
   <body>
     <br>
-    <h2>予約済みホテル一覧</h2>
+    <h2>予約済みホテル一覧444</h2>
+    {% for reserv in reservations %}
+      <h1 style="color:orange">{{ reserv['member_id'] }}</h1>
+    {% endfor %}
     <p class="space">　</p>
+    <h2 style="color:blue">{{ reservations }}</h2>
+
+    <h1 style="color:red">{{ reservations[0] }}</h1>
+
+    <h1 style="color:green">{{ reservations[0]['member_id'] }}</h1>
     <table>
       <tr>
         <th>ホテル名</th>
@@ -38,61 +46,5 @@
   </table>
   <input type="button"  value="この予約をキャンセルする"  class="square_btn" onclick="location.href='予約キャンセル.html'">
   <hr width="500px">
-  <p class="space">　</p>
-  <table>
-    <tr>
-      <th>ホテル名</th>
-      <td>平安京ホテル</td>
-    </tr>
-    <tr>
-      <th>ルームタイプ</th>
-      <td>シングル</td>
-    </tr>
-    <tr>
-      <th>チェックイン日時</th>
-      <td>794年 1月 1日</td>
-    </tr>
-    <tr>
-      <th>チェックアウト日時</th>
-      <td>794年 1月 3日</td>
-    </tr>
-      <th>人数</th>
-      <td>大人2人 子供0人</td>
-    </tr>
-    <tr>
-      <th>料金</th>
-      <td>4,000,000銭</td>
-    </tr>
-</table>
-<input type="button"  value="この予約をキャンセルする"  class="square_btn">
-    <hr width="500px">
-  <p class="space">　</p>
-<table>
-  <tr>
-    <th>ホテル名</th>
-    <td>卑弥呼ホテル</td>
-  </tr>
-  <tr>
-    <th>ルームタイプ</th>
-    <td>ダブル</td>
-  </tr>
-  <tr>
-    <th>チェックイン日時</th>
-    <td>150年 1月 1日</td>
-  </tr>
-  <tr>
-    <th>チェックアウト日時</th>
-    <td>150年 12月 31日</td>
-  </tr>
-    <th>人数</th>
-    <td>大人1人 子供0人</td>
-  </tr>
-  <tr>
-    <th>料金</th>
-    <td>400銭</td>
-  </tr>
-</table>
-<input type="button"  value="この予約をキャンセルする"  class="square_btn">
-    </div>
   </body>
 </html>
