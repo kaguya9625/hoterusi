@@ -3,6 +3,7 @@ import sqlite3
 from logic import func
 from datetime import datetime
 
+
 search = Blueprint('search', __name__,template_folder='templates',static_folder='./static')
 
 
@@ -22,8 +23,7 @@ def result():
         adult = request.form['adult']
         child = request.form['child']
         money = request.form['range']
-        hotel = func.searchhotel(locate)
-        hit = len(hotel)
+
         #今日の日付を取得
         now = datetime.now()
         #チェックイン日をdatetimeに変換
@@ -36,7 +36,10 @@ def result():
             return render_template('searcherror.html',msg='記入されてない事項があります')
         else:
             #チェックイン日がチェックアウト日より小さい場合検索条件を検索結果画面に渡す。
-            if checkin < checkout and roomnumber != 0 and now < checkin_date and checkin != checkout and adult != 0: 
+            if checkin <= checkout and roomnumber != 0 and adult != 0: 
+                #検索
+                hotel = func.searchhotel(locate)
+                hit = len(hotel)
                 return render_template('SearchResult.html',locate=locate,CheckIn=checkin,CheckOut=checkout,roomnumber=roomnumber,adult=adult,child=child,range=money,searchconditions=searchconditions,hit=hit,hotellist=hotel)
             #チェックイン日がチェックアウト日より大きい場合searcherror画面に遷移
             else:
