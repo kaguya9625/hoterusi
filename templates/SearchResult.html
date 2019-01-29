@@ -9,25 +9,25 @@
 <body>
 <div class="SearchBox">
   <form method="POST" action="/searchresult">
-    <input type="search" id="locate" name="locate" value={{ locate }}>
+    <input type="search" id="locate" name="locate" value={{list[0] }}>
     <div class="date" >
       <p>チェックイン日</P>
-    <input type ="date" id="CheckIn" name ="CheckIn"  min="" value={{ CheckIn }}>
+    <input type ="date" id="CheckIn" name ="CheckIn"  min="" value={{ list[1] }}>
     <p>チェックアウト日</P>
-    <input type ="date" id="CheckOut" name ="CheckOut" value={{ CheckOut }}>
+    <input type ="date" id="CheckOut" name ="CheckOut" value={{ list[2] }}>
     </div>
     <div class="member" >
     <p id="room">客室数</p>
-    <input type="number" id="roomnumber" name="roomnumber" min="0" value={{ roomnumber }}>
+    <input type="number" id="roomnumber" name="roomnumber" min="0" value={{list[3] }}>
     <p id="adult1">大人</p>
-      <input type="number" id="adult" name=adult min="0" value={{ adult }}>
+      <input type="number" id="adult" name=adult min="0" value={{ list[4] }}>
       <p id="child1">子供</p>
-        <input type="number" id="child" name=child min="0" value={{ child }}>
+        <input type="number" id="child" name=child min="0" value={{ list[5] }}>
       </div>
       <div class="money">
         <p>予算</p>
-        <input id="range" name="range"type="range" min="0" max="100" step="0.1" value={{ range }}>
-        <span id="value">{{ range }}</span>万
+        <input id="range" name="range"type="range" min="0" max="100" step="0.1" value={{ list[6] }}>
+        <span id="value">{{ list[6] }}</span>万
         <script>
           var elem = document.getElementById('range');
           var target = document.getElementById('value');
@@ -53,8 +53,8 @@
 <span class="hotelname">{{item[1]}}<br>
 <span class="locate">住所:{{item[2]}}</span>
 </span>
-<span class="hotelprice">一泊{{range}}万円~</span>
-<button class="button2" name = "hotel" type="submit" value="{{item[0]}}">客室を選択</button>
+<span class="hotelprice">一泊{{ range }}万円~</span>
+<button class="button2" name = "hotel" type="submit" value="{{ item[0] }}">客室を選択</button>
 </div>
 <hr>
 </form>

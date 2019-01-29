@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template,request, redirect, url_for
-from logic import func
+import func
 
 choice = Blueprint('choice', __name__,template_folder='templates',static_folder='./static')
 
@@ -21,7 +21,6 @@ def Roomchoice():
         for room, type in zip(roomlist, price):
             setlist = [room,type]
             list.append([setlist[0],setlist[1][2],setlist[1][1]])
-
-        return render_template('Roomchoice.html',hotelinfo = list,info = price)
+        return render_template('Roomchoice.html',hotelinfo = list , info = price)
     else:
         return render_template('Roomchoice.html')
