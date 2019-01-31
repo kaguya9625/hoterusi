@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template,request, redirect, url_for, flash
 import sqlite3
-from logic import func
+import func
 from datetime import datetime
 
 
@@ -23,11 +23,7 @@ def result():
         adult = request.form['adult']
         child = request.form['child']
         money = request.form['range']
-
-        #今日の日付を取得
-        now = datetime.now()
-        #チェックイン日をdatetimeに変換
-        checkin_date = datetime.strptime(checkin,'%Y-%m-%d')
+        reservation = [locate,checkin,checkout,roomnumber,adult,child,money]
         #検索条件の表示のための文章生成
         searchconditions = '場所 ' +''+ locate + '日時 ' + checkin +' ~ '+ checkout + '客室数 ' + roomnumber +'部屋' + '大人:' + adult +'人'+ '子供:'+child +'人'+ '予算' + money + '万円'
         
@@ -40,7 +36,7 @@ def result():
                 #検索
                 hotel = func.searchhotel(locate)
                 hit = len(hotel)
-                return render_template('SearchResult.html',locate=locate,CheckIn=checkin,CheckOut=checkout,roomnumber=roomnumber,adult=adult,child=child,range=money,searchconditions=searchconditions,hit=hit,hotellist=hotel)
+                return render_template('SearchResult.html',list = reservation ,searchconditions=searchconditions,hit=hit,hotellist=hotel)
             #チェックイン日がチェックアウト日より大きい場合searcherror画面に遷移
             else:
                 return render_template('searcherror.html',msg='誤った情報があります。')    
