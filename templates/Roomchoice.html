@@ -15,7 +15,7 @@
     <th>料金</th>
     <th>客室数</th>
 </tr>
-
+<form method="POST" action="/reservation_confirm">
 {% for item in hotelinfo %}
 <tr>
   <td>{{item[0]}}</td>
@@ -25,7 +25,8 @@
 </tr>
 {% endfor %}
 </table>
-  <button class="button" onclick="location.href='予約確認.html'">予約</button>
+  <button class="button">予約</button>
+</form>
 </div>
 <div id="fotter"></div>
 </body>

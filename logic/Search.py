@@ -32,7 +32,7 @@ def result():
             return render_template('searcherror.html',msg='記入されてない事項があります')
         else:
             #チェックイン日がチェックアウト日より小さい場合検索条件を検索結果画面に渡す。
-            if checkin <= checkout and roomnumber != 0 and adult != 0: 
+            if checkin <= checkout and roomnumber != 0 and adult != 0 and checkin_date < now:
                 #検索
                 hotel = func.searchhotel(locate)
                 hit = len(hotel)

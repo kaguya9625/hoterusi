@@ -17,10 +17,16 @@ def Roomchoice():
                 roomlist.append('ツイン')
             if item[1] == 3:
                 roomlist.append('ダブル')
+                #部屋タイプ、値段、番号の順番のリスト
         list = []
         for room, type in zip(roomlist, price):
             setlist = [room,type]
             list.append([setlist[0],setlist[1][2],setlist[1][1]])
+<<<<<<< Updated upstream
         return render_template('Roomchoice.html',hotelinfo = list , info = price)
+=======
+        print(list)
+        return render_template('Roomchoice.html',hotelinfo = list,info = price)
+>>>>>>> Stashed changes
     else:
         return render_template('Roomchoice.html')
