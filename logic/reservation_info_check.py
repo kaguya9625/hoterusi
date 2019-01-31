@@ -2,6 +2,7 @@ from flask import Blueprint, render_template,request, redirect, url_for #フラ�
 from sqlite3 import connect, Row #DB接続やDBの生データ抽出のためのライブラリ
 from pprint import pprint
 import sqlite3
+from logic import func
 from collections import defaultdict
 
 nested_dict = lambda: defaultdict(nested_dict) #辞書型を定義するやつ
@@ -31,9 +32,16 @@ def reservation_info_check():
         hotel_name = hotels['hotel_name'] #ホテル名を変数に格納
         reservation_info[i] = record_dict #予約テーブルのレコードをそのまま入れる
         reservation_info[i]['hotel_name'] = hotel_name #ホテル名をキーと共に新規追加
+
+        if 'room_type_name' not in reservation_info[i]:
+            reservation_info[i]['room_type_name'] = ''
+
+        reservation_info[i]['room_type_name'] += 'a'
+        # reservation_info[i]['room_type_name'] += func.roomtype_get(record["room_type_2"])
+        
         i += 1
 
-
-    test = type(reservation_info)
+    
+    test = "room_types"
     return render_template('reservation_info_check.html', reservations=reservation_info, test=test)
     # return render_template('reservation_info_check.html', test=test)
