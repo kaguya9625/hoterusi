@@ -3,7 +3,7 @@ import sqlite3
 #sql文を実行する関数
 #第一引数にsql文、第二引数にparamを渡す
 def paramconnect(sql,param):
-    conn = sqlite3.connect('hoterusi/hoterusi.db')
+    conn = sqlite3.connect('hoterusi.db')
     c = conn.cursor()
     c.execute(sql,param)
     result = c.fetchall()
@@ -13,7 +13,7 @@ def paramconnect(sql,param):
 #sql文を実行する関数
 #sql文を渡すのみ
 def dbconnect(sql):
-    conn = sqlite3.connect('hoterusi/hoterusi.db')
+    conn = sqlite3.connect('hoterusi.db')
     c = conn.cursor()
     c.execute(sql)
     result = c.fetchall()
@@ -44,8 +44,6 @@ def selecthotel(hotelid):
 #ルームタイプを取得する関数
 #引数無し
 def roomdata():
-    conn = sqlite3.connect('hoterusi.db')
-    c = conn.cursor()
     sql = 'select * from room_type'
     result = dbconnect(sql)
     return result
