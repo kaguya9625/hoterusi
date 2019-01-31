@@ -22,11 +22,6 @@ def Roomchoice():
         for room, type in zip(roomlist, price):
             setlist = [room,type]
             list.append([setlist[0],setlist[1][2],setlist[1][1]])
-<<<<<<< Updated upstream
         return render_template('Roomchoice.html',hotelinfo = list , info = price)
-=======
-        print(list)
-        return render_template('Roomchoice.html',hotelinfo = list,info = price)
->>>>>>> Stashed changes
     else:
         return render_template('Roomchoice.html')
