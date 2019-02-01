@@ -16,10 +16,12 @@
         <th>ホテル名</th>
         <td>{{ val['hotel_name'] }}</td>
       </tr>
+      {% for num,name in val['room_type']  %}
       <tr>
-        <th>ルームタイプ</th>
-        <td>{{ val['room_type_name'] }}</td>
+        <th>部屋{{ num+1 }}</th>
+        <td>{{ name }}</td>
       </tr>
+      {% endfor  %}
       <tr>
         <th>チェックイン日時</th>
         <td>{{ val['check_in_date'] }}</td>
@@ -36,7 +38,9 @@
         <td>{{ val['price'] }}</td>
       </tr>
   </table>
+  <br>
   <input type="button"  value="この予約をキャンセルする"  class="square_btn" onclick="location.href='reservation_cancel'">
+  <br><br>
   <hr width="500px"><br><br><br>
   {% endfor %}
   </body>

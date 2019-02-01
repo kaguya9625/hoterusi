@@ -34,13 +34,17 @@ def reservation_info_check():
         reservation_info[i]['hotel_name'] = hotel_name #ホテル名をキーと共に新規追加
 
         if 'room_type_name' not in reservation_info[i]:
-            reservation_info[i]['room_type_name'] = '' #新しいkeyを定義しておく
+            reservation_info[i]['room_type'] = [] #新しいkeyを定義しておく
 
-        reservation_info[i]['room_type_name'] += func.roomtype_get(record['room_type_1'])
-        reservation_info[i]['room_type_name'] += func.roomtype_get(record['room_type_2'])
+        for type_i in range(1, 4):#4回ループ
+            type_num = str(type_i)#文字列型にしておく
+            if record['room_type_' + type_num]:#空じゃなかったらタイプ名取得して格納
+                reservation_info[i]['room_type'].append(func.roomtype_get(record['room_type_' + type_num]))
+                # reservation_info[i]['room_type_name'].append(func.roomtype_get(record['room_type_' + type_num]))
+                # reservation_info[i]['room_ty_' + type_num] = func.roomtype_get(record['room_type_' + type_num])
+                # reservation_info[i]['room_type_name_' + type_num] = func.roomtype_get(record['room_type_' + type_num])
 
-        if record['room_type_3']:
-            reservation_info[i]['room_type_name'] += func.roomtype_get(record['room_type_3'])
+        reservation_info[i]['room_type'] = enumerate(reservation_info[i]['room_type']) #forで回しやすいようにパック
 
         i += 1
 
