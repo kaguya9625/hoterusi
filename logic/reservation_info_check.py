@@ -34,14 +34,17 @@ def reservation_info_check():
         reservation_info[i]['hotel_name'] = hotel_name #ホテル名をキーと共に新規追加
 
         if 'room_type_name' not in reservation_info[i]:
-            reservation_info[i]['room_type_name'] = ''
+            reservation_info[i]['room_type_name'] = '' #新しいkeyを定義しておく
 
-        reservation_info[i]['room_type_name'] += 'a'
-        # reservation_info[i]['room_type_name'] += func.roomtype_get(record["room_type_2"])
-        
+        reservation_info[i]['room_type_name'] += func.roomtype_get(record['room_type_1'])
+        reservation_info[i]['room_type_name'] += func.roomtype_get(record['room_type_2'])
+
+        if record['room_type_3']:
+            reservation_info[i]['room_type_name'] += func.roomtype_get(record['room_type_3'])
+
         i += 1
 
-    
+
     test = "room_types"
     return render_template('reservation_info_check.html', reservations=reservation_info, test=test)
     # return render_template('reservation_info_check.html', test=test)

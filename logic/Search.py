@@ -29,7 +29,7 @@ def result():
         list = [locate,checkin,checkout,roomnumber,adult,child,money]
         #検索条件の表示のための文章生成
         searchconditions = '場所 ' +''+ locate + '日時 ' + checkin +' ~ '+ checkout + '客室数 ' + roomnumber +'部屋' + '大人:' + adult +'人'+ '子供:'+child +'人'+ '予算' + money + '万円'
-        
+
         #非記入欄があった場合errorを吐き searcherror画面に遷移。
         if locate == '' or checkin == '' or checkout == '' or roomnumber == '' or adult == '' or child == '' or money == '':
             return render_template('searcherror.html',msg='記入されてない事項があります')
@@ -42,7 +42,7 @@ def result():
                 return render_template('SearchResult.html',list = list ,searchconditions=searchconditions,hit=hit,hotellist=hotel)
             #チェックイン日がチェックアウト日より大きい場合searcherror画面に遷移
             else:
-                return render_template('searcherror.html',msg='誤った情報があります。')    
+                return render_template('searcherror.html',msg='誤った情報があります。')
     else:
         return render_template('SearchTop.html')
 
