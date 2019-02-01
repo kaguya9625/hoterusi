@@ -19,4 +19,4 @@ for apps in module_define:
          app.register_blueprint(apps)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
