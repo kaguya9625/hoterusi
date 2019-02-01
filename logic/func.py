@@ -39,7 +39,8 @@ def searchhotel(locate):
 #引数hotelid
 def selecthotel(hotelid):
     sql = 'select * from room where hotel_id like ?'
-    result = paramconnect(sql,hotelid)
+    tp_hotel =(hotelid,)
+    result = paramconnect(sql,tp_hotel)
     return result
 
 #ルームタイプを取得する関数
@@ -62,5 +63,6 @@ def roomtype_get(room_type_num):
 #引数はホテルID
 def hotel(hotelid):
     sql = 'select * from hotel where hotel_id like ?'
-    result = paramconnect(sql,hotelid)
+    tp_hotel = (hotelid,)
+    result = paramconnect(sql,tp_hotel)
     return result

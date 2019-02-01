@@ -46,8 +46,9 @@
 <hr>
 <h1>{{ searchconditions }}</h1>
 <p2>{{hit}}件HITしました</p2><br>
-{% for item in hotellist %}
 <form method="POST" action="/Roomchoice">
+{% for item in hotellist %}
+
 <div class="hotel">
 <span><img src="../static/{{item[3]}}"></span>
 <span class="hotelname">{{item[1]}}<br>
@@ -57,8 +58,8 @@
 <button class="button2" name = "hotel" type="submit" value="{{ item[0] }}">客室を選択</button>
 </div>
 <hr>
-</form>
 {% endfor %}
+</form>
 </body>
 <footer>
 

@@ -10,7 +10,6 @@ def Roomchoice():
         hotelid = request.form['hotel']
         #予約情報ストに追加　　チェックイン日、チェックアウト日、大人、子供　ホテルID
         reservation.append(hotelid)
-        print(reservation)
         price = func.selecthotel(hotelid)
         roomtype = func.roomdata()
         roomlist = []
