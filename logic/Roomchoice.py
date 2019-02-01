@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template,request, redirect, url_for
-import func
+from logic import func
+from logic.Search import reservation
 
 choice = Blueprint('choice', __name__,template_folder='templates',static_folder='./static')
 
@@ -7,6 +8,9 @@ choice = Blueprint('choice', __name__,template_folder='templates',static_folder=
 def Roomchoice():
     if request.method == 'POST':
         hotelid = request.form['hotel']
+        #予約情報ストに追加　　チェックイン日、チェックアウト日、大人、子供　ホテルID
+        reservation.append(hotelid)
+        print(reservation)
         price = func.selecthotel(hotelid)
         roomtype = func.roomdata()
         roomlist = []

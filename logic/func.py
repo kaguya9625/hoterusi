@@ -57,3 +57,10 @@ def roomtype_get(roomid):
     c.execute("SELECT room_type_name FROM room_type WHERE room_id=?", (roomid,))
     result = c.fetchone()[0]
     return result
+
+#指定したホテルを取得する関数
+#引数はホテルID
+def hotel(hotelid):
+    sql = 'select * from hotel where hotel_id like ?'
+    result = paramconnect(sql,hotelid)
+    return result
