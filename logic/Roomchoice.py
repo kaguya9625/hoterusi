@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template,request, redirect, url_for
-import func
+from logic import func
 
 choice = Blueprint('choice', __name__,template_folder='templates',static_folder='./static')
 
