@@ -10,7 +10,7 @@ def paramconnect(sql,param):
     result = c.fetchall()
     conn.close()
     return result
-    
+
 #sql文を実行する関数
 #sql文を渡すのみ
 def dbconnect(sql):
@@ -29,7 +29,7 @@ def dbconnect(sql):
 def searchhotel(locate):
     msg = 'ホテルがありません'
     sql = 'select * from hotel where hotel_address like ?'
-    locate1 = (locate + '%',) 
+    locate1 = (locate + '%',)
     result = paramconnect(sql,locate1)
     if result == '':
         return msg
@@ -49,11 +49,11 @@ def roomdata():
     result = dbconnect(sql)
     return result
 
-#room_idに対応するルームタイプ名を取得する関数
-#引数は一つ（room_id）
-def roomtype_get(roomid):
+#room_typeの番号に対応するルームタイプ名を取得する関数
+#引数は一つ
+def roomtype_get(room_type_num):
     conn = sqlite3.connect('hoterusi.db')
     c = conn.cursor()
-    c.execute("SELECT room_type_name FROM room_type WHERE room_id=?", (roomid,))
+    c.execute("SELECT room_type_name FROM room_type WHERE room_id=?", (room_type_num,))
     result = c.fetchone()[0]
     return result
