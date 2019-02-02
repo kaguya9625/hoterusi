@@ -13,7 +13,7 @@
         この予約をキャンセルします<br>
         よろしいですか？
     </h2>
-    <form action="/reservation_cancel" method="post">
+    <form action="/reservation_cancel/confirm" method="post">
       <table>
         <tr>
           <th>ホテル名</th>
@@ -22,8 +22,8 @@
         {% for name in re['room_type'] %}
         <tr>
           <th>部屋{{ loop.index0 + 1 }}</th>
-    
-          <td>{{ name }}</td> 
+
+          <td>{{ name }}</td>
         </tr>
         {% endfor %}
         <tr>
@@ -43,7 +43,8 @@
         </tr>
       </table>
       <br>
-      <input type="button"  value="キャンセルする" class="square_btn" onclick="canselClick();">
+      <!-- <input type="button"  value="キャンセルする" class="square_btn" onclick="canselClick();"> -->
+      <input type="submit"  value="キャンセルする" class="square_btn">
       <br><br>
       <hr width="500px"><br><br><br>
     </form>
