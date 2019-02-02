@@ -78,7 +78,7 @@ def hotel(hotelid):
     return result
 
 #特定のカラムの値を基に特定のテーブルからデータを検索する関数
-#引数は　テーブル名、　カラム名、　カラムの値
+#引数はテーブル名、カラム名、カラムの値
 def table_search(table, col, value):
     conn = sqlite3.connect('hoterusi.db')
     c = conn.cursor()
@@ -87,3 +87,13 @@ def table_search(table, col, value):
     c.execute(sql)
     result = c.fetchall()[0]
     return result
+
+#特定のカラムの値を基に特定のテーブルからデータを削除
+#引数はテーブル名、カラム名、カラムの値
+def delete(table, col, value):
+    conn = sqlite3.connect('hoterusi.db')
+    c = conn.cursor()
+    sql = 'DELETE  FROM ' + table + ' WHERE '+ col + '=' +value
+    c.execute(sql)
+    conn.commit()
+    return "unti"
