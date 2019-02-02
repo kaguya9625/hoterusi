@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="../static/main.css">
-    <link rel="stylesheet" href="../static/button.css">
-    <meta charset="utf-8">
-    <title>予約一覧確認</title>
-  </head>
-    <header>Hoterusi.com</header>
-  <body>
-    <br>
-    <h2>予約済みホテル一覧444</h2>
-    {% for key, val in reservations.items() %}
+
+<head>
+  <link rel="stylesheet" href="../static/main.css">
+  <link rel="stylesheet" href="../static/button.css">
+  <meta charset="utf-8">
+  <title>予約一覧確認</title>
+</head>
+<header>Hoterusi.com</header>
+
+<body>
+  <br>
+  <h2>予約済みホテル一覧</h2>
+  {% for key, val in reservations.items() %}
+  <form action="/reservation_cancel" method="post">
     <table>
       <tr>
         <th>ホテル名</th>
         <td>{{ val['hotel_name'] }}</td>
       </tr>
-      {% for num,name in val['room_type']  %}
+      {% for num,name in val['room_type'] %}
       <tr>
         <th>部屋{{ num+1 }}</th>
         <td>{{ name }}</td>
       </tr>
-      {% endfor  %}
+      {% endfor %}
       <tr>
         <th>チェックイン日時</th>
         <td>{{ val['check_in_date'] }}</td>
@@ -30,18 +33,21 @@
         <th>チェックアウト日時</th>
         <td>{{ val['check_out_date'] }}</td>
       </tr>
-        <th>人数</th>
-        <td>大人{{ val['count_adalt'] }}人 子供{{ val['count_child'] }}人</td>
+      <th>人数</th>
+      <td>大人{{ val['count_adalt'] }}人 子供{{ val['count_child'] }}人</td>
       </tr>
       <tr>
         <th>料金</th>
         <td>{{ val['price'] }}</td>
       </tr>
-  </table>
-  <br>
-  <input type="button"  value="この予約をキャンセルする"  class="square_btn" onclick="location.href='reservation_cancel'">
-  <br><br>
-  <hr width="500px"><br><br><br>
+    </table>
+    <br>
+    <td> <input type="hidden" name="re_id" id="re_id" value="{{ val['reservation_id']  }}"> </td>
+    <input type="submit" value="この予約をキャンセルする" class="square_btn">
+    <br><br>
+    <hr width="500px"><br><br><br>
+  </form>
   {% endfor %}
-  </body>
+</body>
+
 </html>
