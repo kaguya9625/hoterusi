@@ -50,5 +50,6 @@ def reservation_info_check():
 
 
     test = "room_types"
+    con.close()
     return render_template('reservation_info_check.html', reservations=reservation_info, test=test)
     # return render_template('reservation_info_check.html', test=test)
