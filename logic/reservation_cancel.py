@@ -13,8 +13,8 @@ def reservation_cancel():
 
 @re_can.route('/reservation_cancel/confirm',  methods=['GET', 'POST'])
 def reservation_confirm():
-    # if request.method == 'POST':
-    #     reser = request.form['reser']
-    #     reser = ast.literal_eval(reser)
-    # return render_template('reservation_cancel.html',re = reser)
-    return "a"
+    if request.method == 'POST':
+        re_id = request.form['re_id']
+
+        func.delete('reservation', 'reservation_id', re_id)
+    return render_template('reservation_cancel_confirm.html')
