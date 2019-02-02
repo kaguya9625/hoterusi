@@ -19,10 +19,11 @@
         <th>ホテル名</th>
         <td>{{ val['hotel_name'] }}</td>
       </tr>
-      {% for num,name in val['room_type'] %}
+      {% for name in val['room_type'] %}
       <tr>
-        <th>部屋{{ num+1 }}</th>
-        <td>{{ name }}</td>
+        <th>部屋{{ loop.index0 + 1 }}</th>
+  
+        <td>{{ name }}</td> 
       </tr>
       {% endfor %}
       <tr>
@@ -42,7 +43,8 @@
       </tr>
     </table>
     <br>
-    <td> <input type="hidden" name="re_id" id="re_id" value="{{ val['reservation_id']  }}"> </td>
+    <td> <input type="hidden" name="re_id"  value="{{ val['reservation_id']  }}"> </td>
+    <td> <input type="hidden" name="reser"  value="{{ val }}"> </td>
     <input type="submit" value="この予約をキャンセルする" class="square_btn">
     <br><br>
     <hr width="500px"><br><br><br>

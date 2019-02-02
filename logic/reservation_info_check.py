@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template,request, redirect, url_for #フラスコ、ブループリント、レンダーテンプレートなどのインポート
+from flask import Blueprint, render_template,request, redirect, url_for, session #フラスコ、ブループリント、レンダーテンプレートなどのインポート
 from sqlite3 import connect, Row #DB接続やDBの生データ抽出のためのライブラリ
 from pprint import pprint
 import sqlite3
@@ -44,10 +44,10 @@ def reservation_info_check():
                 # reservation_info[i]['room_ty_' + type_num] = func.roomtype_get(record['room_type_' + type_num])
                 # reservation_info[i]['room_type_name_' + type_num] = func.roomtype_get(record['room_type_' + type_num])
 
-        reservation_info[i]['room_type'] = enumerate(reservation_info[i]['room_type']) #forで回しやすいようにパック
-
+        reservation_info[i]['room_type'] = reservation_info[i]['room_type'] 
+        
+    
         i += 1
-
 
     test = "room_types"
     con.close()
