@@ -11,10 +11,10 @@ def reservation_cancel():
         reser = ast.literal_eval(reser)
     return render_template('reservation_cancel.html',re = reser)
 
-# @re_con.route('/reservation_cancel/confirm',  methods=['GET', 'POST'])
-# def reservation_confirm():
-#     if request.method == 'POST':
-#         reser = request.form['reser']
-#         reser = ast.literal_eval(reser)
-#     # return render_template('reservation_cancel.html',re = reser)
-#     return "a"
+@re_can.route('/reservation_cancel/confirm',  methods=['GET', 'POST'])
+def reservation_confirm():
+    # if request.method == 'POST':
+    #     reser = request.form['reser']
+    #     reser = ast.literal_eval(reser)
+    # return render_template('reservation_cancel.html',re = reser)
+    return "a"
