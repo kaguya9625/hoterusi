@@ -66,3 +66,14 @@ def hotel(hotelid):
     tp_hotel = (hotelid,)
     result = paramconnect(sql,tp_hotel)
     return result
+
+#特定のカラムの値を基に特定のテーブルからデータを検索する関数
+#引数は　テーブル名、　カラム名、　カラムの値
+def table_search(table, col, value):
+    conn = sqlite3.connect('hoterusi.db')
+    c = conn.cursor()
+    c.row_factory = sqlite3.Row #生データを取得するように設定（これによってカラム名も取得できる）
+    sql = 'SELECT * FROM ' + table + ' WHERE '+ col + '=' +value
+    c.execute(sql)
+    result = c.fetchall()[0]
+    return result
