@@ -59,6 +59,16 @@ def roomtype_get(room_type_num):
     result = c.fetchone()[0]
     return result
 
+#hotel_idに対応するホテル名を取得する関数
+#引数は一つ
+def hotelname_get(hotel_id):
+    conn = sqlite3.connect('hoterusi.db')
+    c = conn.cursor()
+    c.execute("SELECT hotel_name FROM hotel WHERE hotel_id=?", (hotel_id,))
+    result = c.fetchone()[0]
+    return result
+
+
 #指定したホテルを取得する関数
 #引数はホテルID
 def hotel(hotelid):
