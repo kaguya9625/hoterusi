@@ -7,22 +7,29 @@
   </head>
   <body>
     {% if login %}
-      <div class="tourokou">こんにちわ{{ member_name }}さん</div>
+      <div class="touroku">こんにちは{{ member_name }}さん</div>
       <div class="button3"><a href="/logout">ログアウト</a></div>
 
-      {{ member_id }}
     {% else %}
       <div class="touroku">会員登録は<a href="/Registration">こちら</a>から</div>
       <div class="button3"><a href="/login">ログイン</a></div>
     {% endif %}
+
     <h1>Hoterusi.com</h1>
     <div class="button"onclick=" location.href='/searchtop'">
     ホテルを探す
     </div>
+
+    {% if login %}
+    <div class="button4"onclick="location.href='/reservation_info_check'">
+    予約情報の確認
+    </div>
+    {% else %}
+
     <div class="button2">
     予約情報の確認
     </div>
-
+    {% endif %}
 
   </body>
 </html>
