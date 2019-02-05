@@ -1,37 +1,17 @@
-from flask import Flask,render_template,request, redirect, url_for, session
+from flask import Flask, Blueprint, render_template,request, redirect, url_for, session
 from sqlite3 import connect, Row
 import os
 
-app = Flask(__name__)
+log = Blueprint('log', __name__,template_folder='templates',static_folder='./static')
 
-app.config['SECRET_KEY'] = os.urandom(24)
+# app.config['SECRET_KEY'] = os.urandom(24)
 
-###########################################################################
 
-@app.route('/' , methods=['GET','POST'])
-def index():
-
-    return render_template('Toppage.html')
-###########################################################################
-
-@app.route('/search' , methods=['GET','POST'])
-def search():
-
-    return render_template('SearchTop.html')
-###########################################################################
-
-@app.route('/toppage' , methods=['GET','POST'])
-def toppage():
-    return render_template('Toppagelogin.html')
-###########################################################################
-
-@app.route('/login', methods=['GET','POST'])
+@log.route('/login', methods=['GET','POST'])
 def login():
-
-###########################################################################
-
     return render_template('Login.html')
-@app.route('/valid' , methods=['GET','POST'])
+
+@log.route('/valid' , methods=['GET','POST'])
 def valid():
 
     if request.method == 'POST':
@@ -57,8 +37,3 @@ def valid():
                     session['member_id'] = row['member_id']
                     return redirect(url_for('toppage'))
         return '<dialog open>メールアドレスかパスワードが間違っています<br><a href="/">戻る</a></dialog>'
-
-
-if __name__ == '__main__':
-    app.debug = True
-    app.run()
