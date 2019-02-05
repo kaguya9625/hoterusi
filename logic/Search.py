@@ -24,8 +24,8 @@ def result():
         adult = request.form['adult']
         child = request.form['child']
         money = request.form['range']
-        #予約情報リストに追加　チェックイン日、チェックアウト日、大人、子供
-        reservation.extend([checkin,checkout,adult,child])
+        #予約情報リストに追加　チェックイン日、チェックアウト日、大人、子供,部屋数
+        reservation.extend([checkin,checkout,adult,child,roomnumber])
         list = [locate,checkin,checkout,roomnumber,adult,child,money]
         #検索条件の表示のための文章生成
         searchconditions = '場所 ' +''+ locate + '日時 ' + checkin +' ~ '+ checkout + '客室数 ' + roomnumber +'部屋' + '大人:' + adult +'人'+ '子供:'+child +'人'+ '予算' + money + '万円'
@@ -39,6 +39,7 @@ def result():
                 #検索
                 hotel = func.searchhotel(locate)
                 hit = len(hotel)
+                
                 return render_template('SearchResult.html',list = list ,searchconditions=searchconditions,hit=hit,hotellist=hotel)
             #チェックイン日がチェックアウト日より大きい場合searcherror画面に遷移
             else:

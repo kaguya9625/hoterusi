@@ -14,13 +14,14 @@ def reservation_confirm():
         roomdata = func.selecthotel(hotelid)
         money = str(room1 * roomdata[0][2] + room2 * roomdata[1][2] + room3 * roomdata[2][2])+'円'
         
-        #予約情報ストに追加　　チェックイン日、チェックアウト日、大人、子供　ホテルID　合計金額
+        #予約情報リストに追加　　チェックイン日、チェックアウト日、大人、子供　部屋数、ホテルID　合計金額
         reservation.append(money)
         hoteldata = func.hotel(hotelid)
-        #予約情報ストに追加　　チェックイン日、チェックアウト日、大人、子供　ホテルID 合計金額　ホテル名
+        #予約情報リストに追加　　チェックイン日、チェックアウト日、大人、子供　部屋数、ホテルID 合計金額　ホテル名
         hotelname = hoteldata[0][1]
         reservation.append(hotelname)
-        #予約情報ストに追加　　チェックイン日、チェックアウト日、大人、子供　ホテルID 合計金額　ホテル名、部屋タイプ
+        #予約情報リストに追加　　チェックイン日、チェックアウト日、大人、子供　部屋数、ホテルID 合計金額　ホテル名、部屋タイプ
+        
         room = ''
         if room1 != 0:
             room +='シングル' + ''
@@ -30,4 +31,10 @@ def reservation_confirm():
             room += 'ダブル' + ''
         reservation.append(room)
         return render_template('reservation_confirm.html',list = reservation)
-    
+
+@re_con.route('/reservation_confirm/comp',methods=['GET','POST'])
+def reservation_insert():
+    if request.method == 'POST':
+        reservation = []
+        
+    return render_template('reservation_confirm_comp.html')

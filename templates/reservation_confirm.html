@@ -9,16 +9,17 @@
     <header>Hoterusi.com</header>
   <body>
     <br>
+    <form method="POST" action="/reservation_confirm/comp">
     <h2>以下の内容で予約します <br>　よろしいですか？ </h2>
         <table>
           <tr>
             <th>ホテル名</th>
-            <td>{{list[6]}}</td>
+            <td>{{list[7]}}</td>
           </tr>
           <tr>
             <th>ルームタイプ</th>
          
-            <td>{{list[7]}}</td>
+            <td>{{list[8]}}</td>
 
           </tr>
           <tr>
@@ -34,17 +35,12 @@
           </tr>
           <tr>
             <th>料金</th>
-            <td>{{list[5]}}</td>
+            <td>{{list[6]}}</td>
           </tr>
       </table>
       <br>
-      <input type="button"  value="予約"  class="square_btn" onclick="Aclick()"  >
+      <button id="button1" class="square_btn"> 予約</butoon>
+      </form>
 
   </body>
-  <script>
-      function Aclick() {
-            alert("予約が完了しました");
-            location.href="/"
-            }
-  </script>
 </html>
