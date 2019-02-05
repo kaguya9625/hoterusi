@@ -2,6 +2,8 @@ from flask import Flask,render_template,request, redirect, url_for
 from logic import Search,Top,Registration,Login,member_confirm,reservation_cancel,reservation_confirm,reservation_info_check,Roomchoice
 
 app = Flask(__name__)
+app.secret_key = 'hoterusi'
+
 
 module_define = [
                 Search.search,

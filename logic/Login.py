@@ -4,8 +4,6 @@ import os
 
 log = Blueprint('log', __name__,template_folder='templates',static_folder='./static')
 
-# app.config['SECRET_KEY'] = os.urandom(24)
-
 
 @log.route('/login', methods=['GET','POST'])
 def login():
@@ -35,5 +33,5 @@ def valid():
                 if passwd == row['password']:
                     session['username'] = request.form['mail']
                     session['member_id'] = row['member_id']
-                    return redirect(url_for('toppage'))
+                    return redirect('/')
         return '<dialog open>メールアドレスかパスワードが間違っています<br><a href="/">戻る</a></dialog>'
