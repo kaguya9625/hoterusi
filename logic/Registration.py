@@ -45,11 +45,12 @@ def Registration_confirm():
 def Registration_confirm_true():
     if request.method == 'POST':
         sqlite = request.form['sql']
-    return render_template("test.html", sql=sqlite)
+    # return render_template("test.html", sql=sqlite)
+    # return render_template("test.html", sql=sqlite)
         # func.dbconnect(sqlite)
     #     conn = sqlite3.connect('hoterusi.db')
     #     c = conn.cursor()
     #     c.execute(sqlite)
 
-    # return redirect('/')
+    return redirect('/')
     # return render_template("test.html", sql=sqlite)
