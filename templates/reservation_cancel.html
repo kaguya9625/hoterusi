@@ -13,14 +13,42 @@
         この予約をキャンセルします<br>
         よろしいですか？
     </h2>
-    <div class="square">
-      <ul>
-        <h2>Rusian's Hotel</h2>
-        <li>2017-10-06～2017/10-7</li>
-        <li>325人</li>
-        <li>シングル</li>
-      </ul>
-      <input type="button"  value="キャンセルする" class="square_btn" onclick="canselClick();">
+    <form action="/reservation_cancel/confirm" method="post">
+      <table>
+        <tr>
+          <th>ホテル名</th>
+          <td>{{ re['hotel_name'] }}</td>
+        </tr>
+        {% for name in re['room_type'] %}
+        <tr>
+          <th>部屋{{ loop.index0 + 1 }}</th>
+
+          <td>{{ name }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+          <th>チェックイン日時</th>
+          <td>{{ re['check_in_date'] }}</td>
+        </tr>
+        <tr>
+          <th>チェックアウト日時</th>
+          <td>{{ re['check_out_date'] }}</td>
+        </tr>
+        <th>人数</th>
+        <td>大人{{ re['count_adalt'] }}人 子供{{ re['count_child'] }}人</td>
+        </tr>
+        <tr>
+          <th>料金</th>
+          <td>{{ re['price'] }}</td>
+        </tr>
+      </table>
+      <br>
+      <!-- <input type="button"  value="キャンセルする" class="square_btn" onclick="canselClick();"> -->
+      <input type="submit"  value="キャンセルする" class="square_btn">
+      <input type="hidden" name="re_id" value="{{ re['reservation_id'] }}">
+      <br><br>
+      <hr width="500px"><br><br><br>
+    </form>
     </div>
 
   </body>

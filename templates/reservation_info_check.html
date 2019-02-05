@@ -1,98 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="../static/main.css">
-    <link rel="stylesheet" href="../static/button.css">
-    <meta charset="utf-8">
-    <title>予約一覧確認</title>
-  </head>
-    <header>Hoterusi.com</header>
-  <body>
-    <br>
-    <h2>予約済みホテル一覧</h2>
-    <p class="space">　</p>
+
+<head>
+  <link rel="stylesheet" href="../static/main.css">
+  <link rel="stylesheet" href="../static/button.css">
+  <meta charset="utf-8">
+  <title>予約一覧確認</title>
+</head>
+<header>Hoterusi.com</header>
+
+<body>
+  <br>
+  <h2>予約済みホテル一覧</h2>
+  {% for key, val in reservations.items() %}
+  <form action="/reservation_cancel" method="post">
     <table>
       <tr>
         <th>ホテル名</th>
-        <td>鎌倉帝国ホテル</td>
+        <td>{{ val['hotel_name'] }}</td>
       </tr>
+      {% for name in val['room_type'] %}
       <tr>
-        <th>ルームタイプ</th>
-        <td>シングル</td>
+        <th>部屋{{ loop.index0 + 1 }}</th>
+  
+        <td>{{ name }}</td> 
       </tr>
+      {% endfor %}
       <tr>
         <th>チェックイン日時</th>
-        <td>1192年 1月 1日</td>
+        <td>{{ val['check_in_date'] }}</td>
       </tr>
       <tr>
         <th>チェックアウト日時</th>
-        <td>1192年 1月 3日</td>
+        <td>{{ val['check_out_date'] }}</td>
       </tr>
-        <th>人数</th>
-        <td>大人300人 子供25人</td>
+      <th>人数</th>
+      <td>大人{{ val['count_adalt'] }}人 子供{{ val['count_child'] }}人</td>
       </tr>
       <tr>
         <th>料金</th>
-        <td>56,000,000銭</td>
+        <td>{{ val['price'] }}</td>
       </tr>
-  </table>
-  <input type="button"  value="この予約をキャンセルする"  class="square_btn" onclick="location.href='予約キャンセル.html'">
-  <hr width="500px">
-  <p class="space">　</p>
-  <table>
-    <tr>
-      <th>ホテル名</th>
-      <td>平安京ホテル</td>
-    </tr>
-    <tr>
-      <th>ルームタイプ</th>
-      <td>シングル</td>
-    </tr>
-    <tr>
-      <th>チェックイン日時</th>
-      <td>794年 1月 1日</td>
-    </tr>
-    <tr>
-      <th>チェックアウト日時</th>
-      <td>794年 1月 3日</td>
-    </tr>
-      <th>人数</th>
-      <td>大人2人 子供0人</td>
-    </tr>
-    <tr>
-      <th>料金</th>
-      <td>4,000,000銭</td>
-    </tr>
-</table>
-<input type="button"  value="この予約をキャンセルする"  class="square_btn">
-    <hr width="500px">
-  <p class="space">　</p>
-<table>
-  <tr>
-    <th>ホテル名</th>
-    <td>卑弥呼ホテル</td>
-  </tr>
-  <tr>
-    <th>ルームタイプ</th>
-    <td>ダブル</td>
-  </tr>
-  <tr>
-    <th>チェックイン日時</th>
-    <td>150年 1月 1日</td>
-  </tr>
-  <tr>
-    <th>チェックアウト日時</th>
-    <td>150年 12月 31日</td>
-  </tr>
-    <th>人数</th>
-    <td>大人1人 子供0人</td>
-  </tr>
-  <tr>
-    <th>料金</th>
-    <td>400銭</td>
-  </tr>
-</table>
-<input type="button"  value="この予約をキャンセルする"  class="square_btn">
-    </div>
-  </body>
+    </table>
+    <br>
+    <td> <input type="hidden" name="re_id"  value="{{ val['reservation_id']  }}"> </td>
+    <td> <input type="hidden" name="reser"  value="{{ val }}"> </td>
+    <input type="submit" value="この予約をキャンセルする" class="square_btn">
+    <br><br>
+    <hr width="500px"><br><br><br>
+  </form>
+  {% endfor %}
+</body>
+
 </html>

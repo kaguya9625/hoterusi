@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="../static/main.css">
+    <link rel="stylesheet" href="../static/button.css">
+    <meta charset="utf-8">
+    <title>キャンセル確認</title>
+  </head>
+  <header>Hoterusi.com</header>
+
+  <body>
+      <h1>TSこいよ<a href="https://rusian0.com">rusian0.com</a></h1>
+      <img src="../static/cancel.png" alt="">
+  </body>
+  <script>
+
+      if(confirm("キャンセルが完了しました\nトップページに戻りますか？")){
+        location.href = "/";
+      }
+      else {
+        location.href = "/reservation_info_check";
+      }
+
+
+  </script>
+
+</html>

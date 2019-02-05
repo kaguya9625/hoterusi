@@ -7,48 +7,26 @@
    <header>Hoterusi.com</header>
 <hr>
 <body>
-
-<h1>鎌倉帝国ホテル</h1>
 <p align="center">利用するルームタイプを選んで予約ボタンを押してください</p>
 <div class="room">
   <table border="2">
   <tr id="koumoku">
-    <th></th>
     <th>ルームタイプ</th>
     <th>料金</th>
     <th>客室数</th>
 </tr>
+<form method="POST" action="/reservation_confirm">
+{% for item in hotelinfo %}
 <tr>
-  <td><input type="radio" name="roomType" /></td>
-  <td>シングル</td>
-  <td>2万円</td>
+  <td>{{item[0]}}</td>
+  <td>{{item[1]}}</td>
   <td>
-    <input type="number" min="0" max="4" size="4" required  style="text-align:right;"></input></td>
+    <input type="number" name = "{{item[2]}}" min="0" max="4" size="4" value="0" required  style="text-align:right;" ></input></td>
 </tr>
-<tr>
-  <td><input type="radio" name="roomType"/></td>
-  <td>ダブル</td>
-  <td>5万円</td>
-  <td>
-    <input type="number" min="0" max="4" size="4" required  style="text-align:right;"></input></td>
-</tr>
-<tr>
-  <td><input type="radio" name="roomType"/></td>
-  <td>ツイン</td>
-  <td>5万円</td>
-  <td>
-    <input type="number" min="0" max="4" size="4" required style="text-align:right;" ></input></td>
-</tr>
-<tr>
-  <td><input type="radio" name="roomType"/></td>
-  <td>スイート</td>
-  <td>8万円</td>
-  <td>
-    <input type="number" min="0" max="4" size="4" required style="text-align:right;" ></input></td>
-</tr>
-
+{% endfor %}
 </table>
-  <button class="button" onclick="location.href='予約確認.html'">予約</button>
+  <button class="button">予約</button>
+</form>
 </div>
 <div id="fotter"></div>
 </body>
