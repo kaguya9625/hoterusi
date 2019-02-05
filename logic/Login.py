@@ -31,7 +31,14 @@ def valid():
         if len(result)!=0:
             for row in result:
                 if passwd == row['password']:
-                    session['username'] = request.form['mail']
+                    session['member_name'] = row['member_name']
                     session['member_id'] = row['member_id']
                     return redirect('/')
         return '<dialog open>メールアドレスかパスワードが間違っています<br><a href="/">戻る</a></dialog>'
+
+
+@log.route('/logout', methods=['GET','POST'])
+def logout():
+    session.pop('member_name', None)
+    session.pop('member_id', None)
+    return redirect('/')
