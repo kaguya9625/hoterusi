@@ -74,7 +74,7 @@ text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
 
 .button3 {
   margin-left: 90%;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   width: 120px;height: 50px;
   background-color: #333;
@@ -87,6 +87,39 @@ text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
   border-color: #59b1eb;
   color: #59b1eb;
 }
+.button4 {
+font-size: 40px;
+text-align: center;
+border: 1px solid #15aeec;
+background-color: #49c0f0;
+margin-top: -202px;
+margin-left:58%;
+padding-top: 80px;
+width: 300px; height: 120px;
+background-image: -webkit-linear-gradient(top, #00FF99, #00FF66);
+background-image: linear-gradient(to bottom, #00FF99, #00FF66);
+border-radius: 4px;
+color: #fff;
+line-height: 50px;
+-webkit-transition: none;
+transition: none;
+text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+}
+.button4:hover {
+border:1px solid #1090c3;
+background-color: #1ab0ec;
+background-image: -webkit-linear-gradient(top, #00FF00, #00FF33);
+background-image: linear-gradient(to bottom, #00FF00, #00FF33);
+}
+.button4:active {
+background: #009900;
+box-shadow: inset 0 3px 5px rgba(0, 0, 0, .2);
+color: #009933;
+text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
+}
+
+
+
 .touroku{
-  margin-left: 87%;
+  text-align: right;
 }
