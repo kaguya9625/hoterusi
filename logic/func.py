@@ -97,3 +97,24 @@ def delete(table, col, value):
     c.execute(sql)
     conn.commit()
     return "unti"
+
+# def insert(list):
+#     sql='INSERT INTO reservation(reservation_id,
+#                                 member_id,
+#                                 hotel_id,
+#                                 count_adalt,
+#                                 count_child,
+#                                 count_guest_room,
+#                                 room_type_1,
+#                                 count_person_1,
+#                                 room_type_2,
+#                                 count_person_2,
+#                                 room_type_3,
+#                                 count_person_3,
+#                                 room_type_4,
+#                                 count_person_4,
+#                                 reservation_date,
+#                                 check_in_date,
+#                                 check_out_date,
+#                                 price) values(3,list[4],list[2],list[3],?,?,?,?,?,?,?,?,?,?,?,?,?,list[])
+#     #予約情報リストに追加　　チェックイン日、チェックアウト日、大人、子供　部屋数、ホテルID 合計金額　ホテル名、部屋タイプ
