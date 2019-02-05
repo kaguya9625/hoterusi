@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="ja">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/static/Login.css">
+    <link rel="stylesheet" href="../static/Login.css">
     <title></title>
   </head>
     <header>Hoterusi.com</header>
   <body>
-    <form>
+
       <div class="demo1">
         <a href="Registration.html" class="square_btn">会員登録</a></div><br>
-    <div>
+
       <h1>ログイン</h1>
+      <form method="post" action="/valid">
       <div class="box">
-      <label>メールアドレス</label><br>
-      <input type="text" placeholder="メールアドレス"/><br>
-      <label>パスワード</label><br>
-      <input type="password" placeholder="パスワード"/><br><br>
-      <a href="ToppageLogin.html" class="square_btn">ログイン</a><br><br>
+      <label for="mail">メールアドレス</label><br>
+      <input type="text" placeholder="メールアドレス" id="mail" name="mail"/><br>
+      <label for="pass">パスワード</label><br>
+      <input type="password" placeholder="パスワード" id="pass" name="pass"/><br><br>
+      <input type="submit" value="送信">
     </div>
-  </div>
+
     </form>
+
   </body>
 </html>
