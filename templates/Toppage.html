@@ -6,10 +6,15 @@
     <title>Hoterusi.com</title>
   </head>
   <body>
-    <form>
-    <div class="touroku">会員登録は<a href="/Registration">こちら</a>から</div>
-    </form>
-    <div class="button3"><a href="/login">ログイン</a></div>
+    {% if login %}
+      <div class="tourokou">こんにちわ{{ member_name }}さん</div>
+      <div class="button3"><a href="/logout">ログアウト</a></div>
+
+      {{ member_id }}
+    {% else %}
+      <div class="touroku">会員登録は<a href="/Registration">こちら</a>から</div>
+      <div class="button3"><a href="/login">ログイン</a></div>
+    {% endif %}
     <h1>Hoterusi.com</h1>
     <div class="button"onclick=" location.href='/searchtop'">
     ホテルを探す
