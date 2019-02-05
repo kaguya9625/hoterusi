@@ -16,7 +16,8 @@ def reservation_info_check():
     con.row_factory = sqlite3.Row #生データを取得するように設定（これによってカラム名も取得できる）
     cur = con.cursor() #おまじない
 
-    member_id = 1; #ホントはセッションから取得する予定
+    member_id = session.get('member_id')
+
 
     cur.execute("SELECT * FROM reservation WHERE member_id=?", (member_id,)) #member_idを基に検索をかける
     reservation = cur.fetchall() #検索の結果出力されたデータを連想配列？で格納
