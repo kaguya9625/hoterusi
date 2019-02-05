@@ -13,47 +13,51 @@
 
       <div class="box">
       <br><br>
-      <span>氏名</span>
-      <input type="text" class="name" name="member_info{'fname'}" placeholder="例) 佐仁" required/>
-      <input type="text" class="name" name="member_info{'sname'}" placeholder="五郎" required/><br><br>
+      <!-- <span>氏名</span>
+      <input type="text" class="name" name="fname" placeholder="例) 佐仁" required/>
+      <input type="text" class="name" name="sname" placeholder="五郎" required/><br><br>
 
       <span>カナ</span>
-      <input type="text" class="name"  name="member_info{'fname_kana'}" placeholder="例) サニ" required/>
-      <input type="text" class="name"  name="member_info{'sname_kana'}" placeholder="ゴロウ" required/><br><br>
+      <input type="text" class="name"  name="fname_kana" placeholder="例) サニ" required/>
+      <input type="text" class="name"  name="sname_kana" placeholder="ゴロウ" required/><br><br> -->
+
+      <span>ユーザー名</span>
+      <input type="text" class="name"  name="member_name" required/>
+      <br><br>
 
       <span>メールアドレス</span>
-      <input type="text" class="mail"  name="member_info{'mail'}" > <br><br>
+      <input type="text" class="mail"  name="mail_address" > <br><br>
 
       <span>郵便番号</span>
-      <input type="text" name="zip11" size="10" maxlength="7" placeholder=" 例)1230011" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');"  name="member_info{'postcode'}" required>
+      <input type="text"  size="10" maxlength="7" placeholder=" 例)1230011" onKeyUp="AjaxZip3.zip2addr(this,,addr11,addr11);"  name="postal_code" required>
       <br><br>
 
       <span>住所</span>
-      <input type="text" name="addr11" size="60"  name="member_info{'address'}" required><br><br>
+      <input type="text"  size="60"  name="base_address" required><br><br>
 
       <span>生年月日</span>
-      <input type="text" maxlength="4"class="tel"  name="member_info{'year'}" required> 年
-      <input type="text" maxlength="2"class="day"  name="member_info{'month'}" required> 月
-      <input type="text" maxlength="2"class="day"  name="member_info{'day'}" required> 日<br><br>
+      <input type="text" maxlength="4"class="tel"  name="year" required> 年
+      <input type="text" maxlength="2"class="day"  name="month" required> 月
+      <input type="text" maxlength="2"class="day"  name="day" required> 日<br><br>
 
       <span>性別</span>
-      <input type="radio"name="sex"  name="member_info{'gender'}" value=1 required>
+      <input type="radio"  name="gender" value="1" required>
       <label>男性</label>
-      <input type="radio"name="sex" name="member_info{'gender'}" value=2 required>
+      <input type="radio" name="gender" value="2" required>
       <label>女性</label>
-      <input type="radio"name="sex"  name="member_info{'gender'}" value=3 required>
+      <input type="radio" name="gender" value="3" required>
       <label>その他</label><br><br>
 
       <span>電話番号</span>
-      <input type="text" class="tel"  name="member_info{'tel1'}" required> -
-      <input type="text" class="tel"  name="member_info{'tel2'}" required> -
-      <input type="text" class="tel"  name="member_info{'tel3'}" required><br><br>
+      <input type="text" class="tel"  name="tel1" required> -
+      <input type="text" class="tel"  name="tel2" required> -
+      <input type="text" class="tel"  name="tel3" required><br><br>
 
       <span>パスワード</span>
-      <input type="password" class="pass"  name="member_info{'pass'}" required><br>
+      <input type="password" class="pass"  name="password" required><br>
 
       <span>パスワード(再入力)</span>
-      <input type="password" class="pass"  name="member_info{'pass2'}" required> <br><br>
+      <input type="password" class="pass"  name="pass2" required> <br><br>
       <center>
       <input type="submit" class="square_btn" value="登録">
       </center>

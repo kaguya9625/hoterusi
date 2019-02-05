@@ -10,54 +10,54 @@
   <body>
     <br>
     <h2>登録を確定します<br>以下の内容でよろしいですか？</h2>
-    {{ member_info }}
         <table>
           <tr>
-            <th>氏名</th>
-            <td>帆手　琉氏案</td>
+            <th>ユーザー名</th>
+            <td>{{ member_info['member_name'] }}</td>
           </tr>
-          <tr>
-            <th>カナ</th>
-            <td>ホテ　ルシアン</td>
-          </tr>
+         
           <tr>
             <th>メールアドレス</th>
-            <td>tskoiyo@rusian0.com</td>
+            <td>{{ member_info['mail_address'] }}</td>
           </tr>
           <tr>
 
             <th>郵便番号</th>
-            <td>325-0721</td>
+            <td>{{ member_info['postal_code'] }}</td>
           </tr>
             <th>住所</th>
-            <td>広島県 因島市 帆手琉町 1-2-3</td>
+            <td>{{ member_info['base_address'] }}</td>
           </tr>
           <tr>
             <th>生年月日</th>
-            <td>1997年 12月 9日</td>
+            <td>{{ member_info['birth_date'] }}</td>
           </tr>
           <tr>
           <tr>
             <th>性別</th>
-            <td>漢</td>
+            <td>{{ gender }}</td>
           </tr>
           <tr>
             <th>電話番号</th>
-            <td>080-3210-7716</td>
+            <td>{{ member_info['phone_number'] }}</td>
           </tr>
-          <tr>
+          <!-- <tr>
             <th>パスワード</th>
             <td>💩💩💩💩💩💩</td>
-          </tr>
+          </tr> -->
       </table>
+
       <br>
-      <input type="button"  value="登録"  class="square_btn" onclick="Click();">
+      <form action="/Registration/confirm/true">
+        <input type="submit"  value="登録"  class="square_btn">
+        <input type="text" value="{{ sql }}" hidden>
+      </form>
 
   </body>
   <script>
-  function Click() {
-        alert("登録が完了しました");
-        location.href="ToppageLogin.html"
-        }
+  // function Click() {
+  //       alert("登録が完了しました");
+  //       location.href="ToppageLogin.html"
+  //       }
   </script>
 </html>
